@@ -6,7 +6,7 @@ const Transact = require("../../database/models/transact");
 
 eventsRouter.post("/addTransaction", async (req, res) => {
   const trans = new Transact({
-    Amount: req.body.amount,
+    Amount: Number(req.body.amount),
   });
   trans
     .save()
